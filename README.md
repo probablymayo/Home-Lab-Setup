@@ -2,7 +2,7 @@
 
 This lab is an **Active Directory** environment that I modeled this lab after the "Mr. Robot" series, so if you watch the show you'll see a lot of familiar names 
 
-By no means is this an "exhaustive" list of what I did to setup the environment. I drew from a bunch of youtube videos, online courses (like Udemy) I bought and tutorials as well to kind of make this lab unique instead of just copying it from others. I will include some software and tools I use here to give an idea of what's making the lab "tick". 
+By no means is this an "exhaustive" list of what I did to setup the environment. I drew from a bunch of youtube videos, online courses (like Udemy) and tutorials as well to try and make this lab a little unique. I will include some software and tools I use here to give an idea of what's making the lab "tick". 
 
 I tend to document what I install since the windows licenses are not permanent. I can re-arm the licenses a certain number of times but I will have to periodically rebuild my vms. I included some install instructions for those who might want some inspiration for their own labs or maybe it can help them on their own install of things like Wazuh or Velociraptor. 
 
