@@ -72,13 +72,6 @@ I didn't write this script but here is how it works:
 - Once both the Sysmon binary and configuration file are available, the script installs Sysmon as a Windows service using the `-accepteula` flag to automatically accept the license agreement. It then configures the service to start automatically at system boot. To make sure there's appropriate access to the Sysmon event logs, the script sets permissions on the "**Microsoft-Windows-Sysmon/Operational**" channel so that system processes, administrators, and event log readers can access it.
 - Finally, the script checks whether the Sysmon service is running. If not, it attempts to start it and waits until the service reaches the "**Running**" state. A confirmation message is displayed once Sysmon is verified to be running. 
 
-Now I can download FlareVM via a powershell script: 
-- I can insall if from it's gihub page [HERE](https://github.com/mandiant/flare-vm?tab=readme-ov-file)
-- I can also use this command:
-```
-New-Object net.webclient).DownloadFile('https://raw.githubusercontent.com/mandiant/flare-vm/main/install.ps1',"$([Environment]::GetFolderPath("Desktop"))\install.ps1"
-```
-
 At this point I opened powershell as an admin and then changed the executed policy to be able to run the script, Next was to set the **execution policy** 
 Commands: 
 ```
@@ -86,21 +79,33 @@ Set-ExecutionPolicy unrestricted
 ```
 - Select A for yes to all
 
-`Get-ExecutionPolicy` to check if it worked
-- `.\Install-Sysmon-m122configv2_1.ps1`
-
-Select `R` to finish it 
+`Get-ExecutionPolicy` to check if it worked. If so then run the config: 
+```
+.\Install-Sysmon-m122configv2_1.ps1
+```
+- Select `R` to finish it 
 
 Login to Event Viewer as an admin to see if it worked 
 - Directory = `Applications and Services → Microsoft → Windows → Sysmon → Operational`
  - This directory showed all the events from the install, no events would mean something went wrong
 
+Now I can download FlareVM via powershell or from downloading the ps1 file from github. I did the script on 1 vm and the file on the other: 
+- I can install it from it's github page [HERE](https://github.com/mandiant/flare-vm?tab=readme-ov-file)
+- Have powershell download it for me:
+```
+New-Object net.webclient).DownloadFile('https://raw.githubusercontent.com/mandiant/flare-vm/main/install.ps1',"$([Environment]::GetFolderPath("Desktop"))\install.ps1"
+```
+
 Went ahead and downloaded some Atomic Red Team scripts which allow for emulating attacks to test logging and detections later on in exercises
 
 - Attack Script:
-  - `https://ln5.sync.com/dl/da40042f0/view/default/23948580772012#qax9aer8-rah2u6i3-sbws4xhr-6sryqqgf `
+```
+  https://ln5.sync.com/dl/da40042f0/view/default/23948580772012#qax9aer8-rah2u6i3-sbws4xhr-6sryqqgf 
+```
 
 - Cleanup Script:
-  - `https://ln5.sync.com/dl/e5d8e9540/view/default/23948585022012#wb6akfvr-tefjzqhx-bgabz4gx-ua9nwjkr `
+```
+https://ln5.sync.com/dl/e5d8e9540/view/default/23948585022012#wb6akfvr-tefjzqhx-bgabz4gx-ua9nwjkr 
+```
 
 For troubleshooting I went into the actual script itself and found a `-password` version of it to get it to run. I was having issues since it would not run despite disabling defender and real time protection multiple times via **settings** and **gpedit** 
