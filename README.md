@@ -6,8 +6,6 @@ By no means is this an "exhaustive" list of what I did to setup the environment.
 
 I tend to document what I install since the windows licenses are not permanent. I can re-arm the licenses a certain number of times but I will have to periodically rebuild my vms. I included some install instructions for those who might want some inspiration for their own labs or maybe it can help them on their own install of things like Wazuh or Velociraptor. 
 
-**PS--> I had to adjust the phrasing of my notes for better clarity so you may see me swap from 1st and 3rd person when describing things. Also some pictures are from online forums so the usernames may vary**
-
 <img width="434" height="224" alt="image" src="https://github.com/user-attachments/assets/79ce34d5-2891-4327-a136-fa049d1e67c3" />
 
 <h2>Summary</h2>
