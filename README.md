@@ -11,7 +11,7 @@ I tend to document what I install since the windows licenses are not permanent. 
 <h2>Summary</h2>
 
 The envrionment is housed on a Proxmox host, which is a refurbished Dell Poweredge r730xd I picked up off amazon. 
-- Some say this is overkill but I got the rack for free from work so at that point... why tf not
+- Some say this is overkill but I got a full sized rack for free from work so at that point... why tf not
 
 I have a cisco **CBS-350** 16 port managed switch as well which is the uplink for the server but currently I haven't done much other than intial setup via **puTTy**. I will tinker with this more when I start to persue the CCNA 
 
